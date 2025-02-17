@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.onTap, this.isLoading = true});
+  const CustomButton({super.key, this.onTap, this.isLoading = true, required this.buttonTitle});
 
   final void Function()? onTap;
-
+  final String buttonTitle;
   final bool isLoading;
 
   @override
@@ -32,7 +32,7 @@ class CustomButton extends StatelessWidget {
                   ),
                 )
               : Text(
-                  'Add',
+                  buttonTitle,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,

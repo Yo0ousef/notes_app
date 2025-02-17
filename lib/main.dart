@@ -30,9 +30,10 @@ class NotesApp extends StatelessWidget {
         },
         initialRoute: NewsView.id,
         theme: ThemeData(
-            fontFamily: 'Poppins',
-            brightness: Brightness.dark,
-            scaffoldBackgroundColor: Colors.grey.shade900),
+          fontFamily: 'Poppins',
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: Colors.grey.shade900,
+        ),
       ),
     );
   }
