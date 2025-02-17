@@ -52,10 +52,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
+                    String formattedDate =
+                        '${DateTime.now().day}-${DateTime.now().month}-${DateTime.now().year}';
                     NoteModel note = NoteModel(
                         title: title!,
                         content: content!,
-                        date: '${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}',
+                        date: formattedDate,
                         color: Colors.lightBlueAccent.value);
                     BlocProvider.of<AddNoteCubit>(context).addNote(note);
                   } else {

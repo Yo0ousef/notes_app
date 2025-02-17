@@ -12,26 +12,23 @@ class NewsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NotesCubit(),
-      child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: kPrimaryColor,
-          foregroundColor: Colors.black,
-          shape: CircleBorder(),
-          onPressed: () {
-            showModalBottomSheet(
-              context: context,
-              builder: (context) {
-                return const AddNoteBottomSheet();
-              },
-              isScrollControlled: true,
-            );
-          },
-          child: Icon(Icons.add),
-        ),
-        body: NotesViewBody(),
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: kPrimaryColor,
+        foregroundColor: Colors.black,
+        shape: CircleBorder(),
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return const AddNoteBottomSheet();
+            },
+            isScrollControlled: true,
+          );
+        },
+        child: Icon(Icons.add),
       ),
+      body: NotesViewBody(),
     );
   }
 }
